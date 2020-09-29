@@ -85,21 +85,34 @@ nav ul li {
 
 
 p{
-    margin: 0.5em;
+    margin: 1em 0;
 }
 section {
     width: 80%;
-    margin: 4em auto;
+    margin: 2.5em auto;
 }
+section ul {
+    list-style-position: outside;
+    width: 70%;
+    margin: 2em auto;
+    background-color: #f0f4f8;
+    padding: 1em 2em;
+    border-radius: 4px;
+}
+section ul li{
+    margin: 0.5em 0;
+}
+
 .segment {
-    margin: 1.5em;
-    padding: 1em;
+    margin: 2em;
+    padding: 0.5em;
     background-color: #f0f4f8;
     border-radius: 4px;
 }
 code {
     display: block;
     margin: 0.5em;
+    font-family: monospace;
 }
 header:not(#navheader){
     text-align: center;

@@ -14,54 +14,92 @@
 <body>
 
     <nav id="navbar"> <!-- position left, column nav on DT, top center @media phone -->
-        <header id="navheader">Intro to github</header>
+        <header id="navheader">Using gh-pages</header>
         <ul id="navlinks">
-            <li><a href="#Install_Git" class="nav-link">Install Git</a></li>
-            <li><a href="#Git_Setup" class="nav-link">three</a></li>
-            <li><a href="#Create_a_github_account" class="nav-link">Create a Github Account</a></li>
+            <li><a href="#Installing_Git" class="nav-link">Installing Git</a></li>
+            <li><a href="#Git_Setup" class="nav-link">Git Setup</a></li>
+            <li><a href="#Create_a_Github_Account" class="nav-link">Create a Github Account</a></li>
 
-            <li><a href="#" class="nav-link">four</a></li>
-            <li><a href="#" class="nav-link">five</a></li>
+            <li><a href="#GH_Repo_Creation" class="nav-link">GH Repo Creation</a></li>
+            <li><a href="#Using_gh-pages" class="nav-link">Using gh-pages</a></li>
         </ul>
     </nav>
 
     <main id="main-doc">
-        <section id="Install_Git" class="main-section">
-            <header>Install Git</header>
-            <p>git is a distributed version control system used to track project changes.</p>
-            <p>You can download it for your OS at <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>. This site also hosts documentation and tutorials in numerous languages for those new to using git.</p>
+        <section id="Installing_Git" class="main-section">
+            <header>Installing Git</header>
+            <p>git is a distributed version control system used to track computer file changes.  While it is possible to use GitHub without installing git, it is more efficient, and also more beneficial to become familiar with using it.  If you do not already have it installed, you can download it for your OS at <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>.</p>
+            <p>The Git site also contains documentation and tutorials in numerous languages for those new to it.  The following YouTube videos also provide useful information for beginners:</p>
+            <ul>
+                <li><a href="https://www.youtube.com/playlist?list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx">Git Tutorials (Corey Schafer)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=RGOj5yH7evk&t=6s">Git and GitHub for Beginners - Crash Course (Gwendolyn Faraday at freeCodeCamp.org)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=SWYqp7iY_Tc">Git & GitHub Crash Course For Beginners (Traversy Media)</a></li>
+            </ul>
+            
         </section>
 
         <section id="Git_Setup" class="main-section">
             <header>Git Setup</header>
-            <p>Once git is installed, you should set your user name and email</p>
-            <p>This is done by typing the following (with your information substituted) at the command line (without the $)</p>
+            <p>Once git is installed, you should configure it with your user name and email.  Type the following, with your name and email information substituted, at the command line (without the $)</p>
             <div class="segment">
                 <code>$ git config --global user.name "John Doe"</code>
                 <code>$ git config --global user.email johndoe@example.com</code>
+            </div>
+            <p>A file directory can be tracked with git by navigating to it (in Windows you can right-click on the folder and select 'git bash here') 
+                and intitalizing a repository by typing the following:</p>
+            <div class="segment">
+                <code>$ git init</code>
+            </div>
+    
+            <p>This will create a master branch for your project.  You also need to declare which files you want to track.  You can add specific files by name, or add all files in the folder as shown below.  The first command adds
+                the files to what is called the Staging Area, and the second logs the changes in them.
+            </p>
+            <div class="segment">
+                <code>$ git add -A</code>
+                <code>$ git commit -m "some message explaining what I did to these files"</code>
             </div>
         </section>
 
         <section id="Create_a_Github_Account" class="main-section">
             <header>Create a Github Account</header>
-            <p>A github account can be created on the <a href="https://github.com/join">github website.</a></p>
+            <p>A GitHub account can be created on the <a href="https://github.com/join">GitHub website.</a></p>
             <p>Account setup and verification is fairly straight forward.</p>
-            <code></code>
         </section>
 
 
-        <section class="main-section">
-            <header>more things</header>
-            <p>stuff</p>
-            <p>stuff</p>
-            <code>code</code>
+        <section id="GH_Repo_Creation"class="main-section">
+            <header>GH Repo Creation</header>
+            <p>On GitHub, a new repository can be created by clicking the green 'new' button.  If you are on the main GitHub page, it is on the top left, and looks like this:</p>
+            <div><img src="./images/btnNew.png" alt="github new repository button"/></div>
+            <p>You will be prompted to create a name for your repository.  Once created, you will be given information that includes a git command and https url that you can use to associate an existing git project on your local machine with this remote GitHub repository.  In your local git project directory, type or paste it in the Git command line.</p>
+            <div class="segment">
+                <code>$ git remote add origin https://github.com/username.projectName.git</code>
+            </div>
         </section>
-        <section class="main-section">
-            <header>more things</header>
-            <p>stuff</p>
-            <p>stuff</p>
-            <code>code</code>
+
+        <section id="Using_gh-pages" class="main-section">
+            <header>Using gh-pages</header>
+            <p>Since we want to publish the project with gh-pages, we also need to create a gh-pages branch.  Running the command below in the git directory will create this branch and switch to it.</p>
+            <div class="segment">
+                <code>$ git checkout -b gh-pages</code>
+            </div>
+            <p>This branch can be uploaded to your GitHub repository with:</p>
+            <div class="segment">
+                <code>$ git push origin gh-pages</code>
+            </div>
+            <p>You might be asked to supply your github authorization here.</p>    
+            <p>It may take a few minutes for your changes to be updated on GitHub.  Once they have been, you will be able to see your project at:</p>
+            <div class="segment">
+                <code>https://username.github.io/projectname/</code>
+            </div>
+            <p>The following YouTube video tutorials provide additional information and walkthroughs about using git and Github.</p>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=BCQHnlnPusY&t=11s">Introduction - Git and GitHub for Poets (The Coding Train)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=iyFjdmzcpws&t=186s">Push Existing Folder to gh-pages Branch (ephotopros)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=prjmGQrUHso">Deploying a static site to GH-Pages (Thomas W. Smith)</a></li>
+            </ul>
         </section>
+
     </main>
 </body>
 </html>
